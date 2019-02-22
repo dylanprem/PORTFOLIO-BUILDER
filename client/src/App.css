@@ -1,0 +1,53 @@
+html,
+body {
+  height: calc(100vh - 3.75rem);
+  font-family: "Lato", sans-serif;
+}
+
+.fileImg {
+  height: 150px;
+  width: 150;
+  object-fit: cover;
+}
+
+.project-img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.framework-img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+}
+
+.abt-img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+#sidebar {
+  height: calc(100vh - 3.75rem);
+}
+
+#sidebar-link:hover {
+  transition: 0.5 all ease-in-out;
+}
+
+#sidebar-link:hover {
+  cursor: pointer;
+  transition: 0.5 all ease-in-out;
+}
+
+.list-group-item {
+  border: none !important;
+  background-color: none !important;
+}
+
+.shadowed {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
