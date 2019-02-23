@@ -26,9 +26,6 @@ class Register extends Component {
     }
     this.getSettings();
   }
-  componentDidUpdate() {
-    console.log(this.state.settings[0].disableRegisterPage);
-  }
 
   getSettings = () => {
     API.get(`/api/GET/settings`)
@@ -68,7 +65,7 @@ class Register extends Component {
     const { errors, settings } = this.state;
     let toggleReg;
 
-    if (isEmpty(settings) || settings[0].disableRegisterPage === "enabled") {
+    if (isEmpty(settings) || settings.disableRegisterPage[0] === "enabled") {
       toggleReg = (
         <div className="register">
           <div className="container">
