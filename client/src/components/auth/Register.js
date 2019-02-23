@@ -65,7 +65,7 @@ class Register extends Component {
     const { errors, settings } = this.state;
     let toggleReg;
 
-    if (isEmpty(settings) || settings.disableRegisterPage[0] === "enabled") {
+    if (isEmpty(settings) || settings[0].disableRegisterPage === "enabled") {
       toggleReg = (
         <div className="register">
           <div className="container">

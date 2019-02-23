@@ -16,7 +16,7 @@ class Settings extends Component {
     };
     this.toggleEditModal = this.toggleEditModal.bind(this);
     this.togglePostModal = this.togglePostModal.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.postSettings = this.postSettings.bind(this);
     this.updateSettings = this.updateSettings.bind(this);
   }
@@ -37,15 +37,9 @@ class Settings extends Component {
     }));
   }
 
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-  }
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
   getSettings = () => {
     API.get(`/api/GET/settings`)
@@ -185,6 +179,7 @@ class Settings extends Component {
                   ref={disableRegisterPage =>
                     (this.disableRegisterPage = disableRegisterPage)
                   }
+                  onChange={this.handleChange}
                 >
                   <option className="text-danger" value="enabled">
                     Enable Register Page
@@ -226,6 +221,7 @@ class Settings extends Component {
                 id="sel1"
                 name="disableRegisterPage"
                 value={this.state.disableRegisterPage}
+                onChange={this.handleChange}
               >
                 <option value="0">Select an option</option>
                 <option className="text-danger" value="enabled">
